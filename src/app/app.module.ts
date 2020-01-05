@@ -5,12 +5,14 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { UsersComponent } from './users/users.component';
 import { PostsComponent } from './posts/posts.component';
+import { MenuComponent } from './shared/headers/menu/menu.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     UsersComponent,
-    PostsComponent
+    PostsComponent,
+    MenuComponent
   ],
   imports: [
     BrowserModule,

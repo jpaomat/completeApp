@@ -9,7 +9,7 @@ import { Router } from '@angular/router';
 export class PostsComponent implements OnInit {
 
   constructor(private routerModule: Router) { }
-
+  title="Posts";
   ngOnInit() {
   };
   goToUsers(){
