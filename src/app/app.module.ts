@@ -7,13 +7,15 @@ import { MenuComponent } from './shared/headers/menu/menu.component';
 import { HttpClientModule } from '@angular/common/http';
 import { UsersModule } from './users/users.module';
 import { PostsModule } from './posts/posts.module';
-import { ButtonPanicComponent } from './shared/components/button-panic/button-panic.component'
+import { ButtonPanicComponent } from './shared/components/button-panic/button-panic.component';
+import { ContactComponent } from './shared/components/contact/contact.component'
 
 @NgModule({
   declarations: [
     AppComponent,
     MenuComponent,
-    ButtonPanicComponent
+    ButtonPanicComponent,
+    ContactComponent
   ],
   imports: [
     BrowserModule,

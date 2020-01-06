@@ -1,0 +1,9 @@
+<div class="container section-pad">
+  <div class="col-3 container-contacto ">
+    <div class="form-group">
+      <label for="mensaje">Mensaje:</label>
+      <textarea class="form-control" id="mensaje" (input)="message=$event.target.value"></textarea> <!--$event.target.value->toma el valor del textarea-->
+    </div>
+    <button class="btn btn-primary" (click)="send()">send</button>
+  </div>
+</div>
