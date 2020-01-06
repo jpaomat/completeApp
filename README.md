@@ -23,6 +23,7 @@ routes =[
     {path:"1", component: user1component}
   ]
 ])
+8. Rutas secundarias -> 
 
 ## Build
 
