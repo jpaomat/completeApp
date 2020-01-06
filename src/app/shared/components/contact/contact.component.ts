@@ -13,7 +13,7 @@ export class ContactComponent implements OnInit, allowDeactivate {
   constructor() { }  
   
   send(){
-    alert('Message sent'+ this.message);
+    alert('Message sent'+' '+ this.message);
     this.sent=true;
   };
   allowLeaveRoute(): boolean | import("rxjs").Observable<boolean> | Promise<boolean> 

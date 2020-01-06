@@ -8,14 +8,16 @@ import { HttpClientModule } from '@angular/common/http';
 import { UsersModule } from './users/users.module';
 import { PostsModule } from './posts/posts.module';
 import { ButtonPanicComponent } from './shared/components/button-panic/button-panic.component';
-import { ContactComponent } from './shared/components/contact/contact.component'
+import { ContactComponent } from './shared/components/contact/contact.component';
+import { LoginComponent } from './shared/components/login/login.component'
 
 @NgModule({
   declarations: [
     AppComponent,
     MenuComponent,
     ButtonPanicComponent,
-    ContactComponent
+    ContactComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,

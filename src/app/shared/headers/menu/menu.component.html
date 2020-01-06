@@ -38,6 +38,12 @@
             </a>
           </div>
         </li>
+        <li class="nav-item">
+          <div>
+            <a class="navbar-brand" routerLink="/login" [routerLinkActive]="'active'" *ngIf="!userLogin">Login</a>
+            <a class="navbar-brand" [routerLinkActive]="'active'" (click)="userLogout()" style="cursor: pointer;" *ngIf="userLogin" routerLink="/users">Logout</a>
+          </div>
+        </li>
       </ul>
     </div>
   </div>
