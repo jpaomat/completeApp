@@ -21,5 +21,9 @@ export class HttpRequestService {
   getPostFromUser(baseUrlPosts: string, userId: string):Observable<Post[]>{
     const url= `${baseUrlPosts}?userId=${userId}`; 
     return this.httpService.get<Post[]>(url);
+  };
+  getDetailsUser(baseUrlUsers: string, id:string):Observable<Users>{
+    const url= `${baseUrlUsers}?id=${id}`;
+    return this.httpService.get<Users>(url);
   }
 }

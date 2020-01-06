@@ -1,21 +1,4 @@
 <div class="container section-pad">
-  <!--<button type="button" class="btn btn-secondary" (click)="goToPosts()">Go to posts</button>-->
-  <ng-container *ngIf="users">
-    <table class="table">
-      <thead>
-        <tr>
-          <th></th>
-          <th>Name</th>
-          <th>Email</th>
-        </tr>
-      </thead>
-      <tbody *ngFor="let users of users">
-        <tr>
-          <td><button  class="btn btn-primary" (click)="viewPost(users.id)">view</button></td>
-          <td>{{users.name}}</td>
-          <td>{{users.email}}</td>
-        </tr>
-      </tbody>
-    </table>
-  </ng-container>
+  <h3>User List</h3>
 </div>
+<router-outlet></router-outlet>

@@ -1,0 +1,25 @@
+<div class="container" *ngIf="user">
+  <table class="table" *ngFor="let user of user">
+    <thead>
+      <tr>
+        <th>
+          {{user.name}}
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th>Nombre</th>
+        <td>{{user.name}}</td>
+      </tr>
+      <tr>
+        <th>Email</th>
+        <td>{{user.email}}</td>
+      </tr>
+      <tr>
+        <th>Phone</th>
+        <td>{{user.phone}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
