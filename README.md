@@ -10,6 +10,19 @@ Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app w
 
 Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
 
+6. Multiples modulos -> ng g module users/users --module app --flat --routing (--module app lo importa automaticamente al moduo raiz)
+7. Rutas hijas -> ayudan a definir componentes especificos que seran mostrados dentro de la plantilla del un componente padre (Ejm:
+routes =[
+  {path:"users", componente: usersComponent} (Componente padre),
+  Children :[
+    {path:":id", component: userListcomponent}
+  ]
+]) y se agrega el tag router-outlet a la plantilla del componente padre (en este caso usersComponent)
+8. Rutas secundarias -> a diferencia de las rutas hijas estas se muestran asi el usuario navegue a otras vistas (ejemplo: el chat), para esto el router-outlet (APLICADO EN EL APPCOMPONENT) debe de llevar nombre, *1* se le pasa el atributo name="nombre" al tag router-outlet (<router-outlet name="buttonPanic"></router-outlet>), *2* ademas en la regla de ruteo se pone outlet:'nombre' ({path:'panic', component:ButtonPanicComponent, outlet:'buttonPanic'},) *3* y en la plantilla para navegar hacia esta se pone ([routerLink]="[{outlets: {buttonPanic: ['panic']}}]"), *4* finalmente para cerrar la ventana o vista secundaria se puede usar en la clase el evento close(){
+    this.routerService.navigate([{ outlets: { buttonPanic: null } }]);
+  }
+
+
 ## Build
 
 Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
