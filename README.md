@@ -18,11 +18,11 @@ Run `ng generate component component-name` to generate a new component. You can 
 6. Multiples modulos -> ng g module users/users --module app --flat --routing (--module app lo importa automaticamente al moduo raiz)
 7. Rutas hijas -> ayuda a definir componentes especificos que seran mostrados dentro de la plantilla del un componente padre (Ejm:
 routes =[
-  {path:"users", componente: usersComponent},
+  {path:"users", componente: usersComponent} (Componente padre),
   Children :[
     {path:"1", component: user1component}
   ]
-])
+]) y se agrega un <router-outlet></router-outlet> a la plantilla del componente padre
 8. Rutas secundarias -> 
 
 ## Build
