@@ -23,7 +23,7 @@ routes =[
     {path:"1", component: user1component}
   ]
 ]) y se agrega el tag router-outlet a la plantilla del componente padre
-8. Rutas secundarias -> a diferencia de las rutas hijas estas se muestran asi el usuario navegue a otras vistas (ejemplo: el chat), 
+8. Rutas secundarias -> a diferencia de las rutas hijas estas se muestran asi el usuario navegue a otras vistas (ejemplo: el chat), para esto el router-outlet debe de llevar nombre
 
 ## Build
 
