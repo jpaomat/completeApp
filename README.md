@@ -10,9 +10,9 @@ Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app w
 
 Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
 
-*Http-Request -> En el modulo donde se use, se inserta el modulo HttpClientModule (import { HttpClientModule } from '@angular/common/http';) y en el servicio donde se vaya a usar se inserta HttpClient (import { HttpClient } from '@angular/common/http';)
-*Servicio de ruteo -> se inserta Router en el constructor de la clase del componente donde se vaya a usar, este se usa por medio de un evento
-*Acceder a los parametros de la url activada -> se inserta el servicio ActivateRoute para tomar algun parametro de una ruta
+1. Http-Request -> En el modulo donde se use, se inserta el modulo HttpClientModule (import { HttpClientModule } from '@angular/common/http';) y en el servicio donde se vaya a usar se inserta HttpClient (import { HttpClient } from '@angular/common/http';)
+2. Servicio de ruteo -> se inserta Router en el constructor de la clase del componente donde se vaya a usar, este se usa por medio de un evento
+3. Acceder a los parametros de la url activada -> se inserta el servicio ActivateRoute para tomar algun parametro de una ruta
 *PathMatch -> {path:'', redirectTo:'/users', pathMatch:'full'}, o se maneja full o prefix
 *Rutas no encontradas ->{path:'**', component: NotFoundComponent}
 *Multiples modulos ->
