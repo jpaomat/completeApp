@@ -23,7 +23,9 @@ routes =[
     {path:"1", component: user1component}
   ]
 ]) y se agrega el tag router-outlet a la plantilla del componente padre
-8. Rutas secundarias -> a diferencia de las rutas hijas estas se muestran asi el usuario navegue a otras vistas (ejemplo: el chat), para esto el router-outlet debe de llevar nombre, se le pasa el atributo name="nombre" al tag router-outlet, ademas en la regla de ruteo se pone outlet:'nombre'
+8. Rutas secundarias -> a diferencia de las rutas hijas estas se muestran asi el usuario navegue a otras vistas (ejemplo: el chat), para esto el router-outlet debe de llevar nombre, se le pasa el atributo name="nombre" al tag router-outlet, ademas en la regla de ruteo se pone outlet:'nombre' ({path:'panic', component:ButtonPanicComponent, outlet:'buttonPanic'},) y en la plantilla para navegar hacia esta se pone ([routerLink]="[{outlets: {buttonPanic: ['panic']}}]"), finalmente para cerra la ventana o vista secundaria se puede usar la clase close(){
+    this.routerService.navigate([{ outlets: { buttonPanic: null } }]);
+  }
 
 ## Build
 
