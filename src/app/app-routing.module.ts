@@ -1,11 +1,10 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { UsersComponent } from './users/users.component';
-import { PostsComponent } from './posts/posts.component';
+import { ButtonPanicComponent } from './shared/components/button-panic/button-panic.component';
 
 
 const routes: Routes = [
-  
+  {path:'panic', component:ButtonPanicComponent, outlet:'buttonPanic'},
   {path:'', redirectTo:'/users', pathMatch:'full'},//con el patchMatch full el path debe coindicir tal cual pero si se usa prefix desde que este de primeras la parte del path lo redirige exitosamente
  // {path:'**', component: NotFoundComponent} //ESTE SE PONE CUANDO LA URL ESTA MAL ENTONCES SE REDIRIGE A UN COMPONENTE NOTFOUND Q SE DEBE CREAR 
 ];

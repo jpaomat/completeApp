@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -8,8 +9,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UsersComponent implements OnInit {
   title="Users";
-  constructor() { }
+  constructor(private routerModule:Router) { }
   
   ngOnInit() {
+  };
+  goToPosts(){
+    this.routerModule.navigate(['/posts']);
   }
 }

@@ -6,12 +6,14 @@ import { AppComponent } from './app.component';
 import { MenuComponent } from './shared/headers/menu/menu.component';
 import { HttpClientModule } from '@angular/common/http';
 import { UsersModule } from './users/users.module';
-import { PostsModule } from './posts/posts.module'
+import { PostsModule } from './posts/posts.module';
+import { ButtonPanicComponent } from './shared/components/button-panic/button-panic.component'
 
 @NgModule({
   declarations: [
     AppComponent,
-    MenuComponent
+    MenuComponent,
+    ButtonPanicComponent
   ],
   imports: [
     BrowserModule,

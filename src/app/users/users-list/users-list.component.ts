@@ -20,9 +20,6 @@ export class UsersListComponent implements OnInit {
   ngOnInit() {
     this.getListUsers();
   };
-  goToPosts(){
-    this.routerModule.navigate(['/posts']);
-  }
   getListUsers(){
     this.httRequestService.getListUsers(this.baseUrlUsers).subscribe((apiUsers: Users[])=>{
       this.users=apiUsers;

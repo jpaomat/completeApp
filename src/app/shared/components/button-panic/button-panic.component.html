@@ -1,0 +1,18 @@
+<div class="container-main">
+  <ng-container *ngIf="!sent">
+    <form action="">
+      <div class="form-group">
+        <label for="panic-area">¿What is your problem?</label>
+        <textarea class="form-control" id="panic-area"></textarea>
+      </div>
+      <button class="btn btn-danger" (click)="sent=true" >help!</button>
+      <button class="btn btn-default" (click)="close()">close</button>
+    </form>
+  </ng-container>
+  <ng-container *ngIf="sent">
+    <div class="container-sent">
+      <p>we will help you right away</p>
+    </div>
+    <button class="btn btn-primary" (click)="close()">Thanks!</button>
+  </ng-container>
+</div>
