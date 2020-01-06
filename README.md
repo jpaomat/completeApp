@@ -22,7 +22,7 @@ routes =[
   Children :[
     {path:"1", component: user1component}
   ]
-]) y se agrega un (<router-outlet></router-outlet>) a la plantilla del componente padre
+]) y se agrega el tag router-outlet a la plantilla del componente padre
 8. Rutas secundarias -> 
 
 ## Build
