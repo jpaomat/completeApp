@@ -13,9 +13,16 @@ Run `ng generate component component-name` to generate a new component. You can 
 1. Http-Request -> En el modulo donde se use, se inserta el modulo HttpClientModule (import { HttpClientModule } from '@angular/common/http';) y en el servicio donde se vaya a usar se inserta HttpClient (import { HttpClient } from '@angular/common/http';)
 2. Servicio de ruteo -> se inserta Router en el constructor de la clase del componente donde se vaya a usar, este se usa por medio de un evento
 3. Acceder a los parametros de la url activada -> se inserta el servicio ActivateRoute para tomar algun parametro de una ruta
-*PathMatch -> {path:'', redirectTo:'/users', pathMatch:'full'}, o se maneja full o prefix
-*Rutas no encontradas ->{path:'**', component: NotFoundComponent}
-*Multiples modulos ->
+4. PathMatch -> {path:'', redirectTo:'/users', pathMatch:'full'}, o se maneja full o prefix
+5. Rutas no encontradas ->{path:'**', component: NotFoundComponent}
+6. Multiples modulos -> ng g module users/users --module app --flat --routing (--module app lo importa automaticamente al moduo raiz)
+7. Rutas hijas -> ayuda a definir componentes especificos que seran mostrados dentro de la plantilla del un componente padre (Ejm:
+routes =[
+  {path:"users", componente: usersComponent},
+  Children :[
+    {path:"1", component: user1component}
+  ]
+])
 
 ## Build
 
