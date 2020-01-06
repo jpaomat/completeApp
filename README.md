@@ -21,7 +21,7 @@ Estos permiten agregar funcionalidad en distintos momentos del ciclo de vida de 
 Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
 
 1. CanDeactivate: (ej: un formulario que esta siendo diligenciado y evita que se salga sin haber guardado cambios).
-1.1 se debe generar el guard con el comando ***ng g guard guards/can-deactivate*** este guard toca crearlo pues no se encuentra en el angular, este se creo en la carpeta guards con el nombre de **can-deactivate-guard.ts**.
++ se debe generar el guard con el comando ***ng g guard guards/can-deactivate*** este guard toca crearlo pues no se encuentra en el angular, este se creo en la carpeta guards con el nombre de **can-deactivate-guard.ts**.
 
 
 ## Build
