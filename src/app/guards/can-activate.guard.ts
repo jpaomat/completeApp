@@ -1,12 +1,13 @@
 import { Injectable } from '@angular/core';
-import { CanActivate, ActivatedRouteSnapshot, RouterStateSnapshot, UrlTree, Router } from '@angular/router';
+import { CanActivate, ActivatedRouteSnapshot, RouterStateSnapshot, UrlTree, Router, CanActivateChild } from '@angular/router';
 import { Observable } from 'rxjs';
 import { AuthService } from '../shared/services/auth.service';
 
 @Injectable({
   providedIn: 'root'
 })
-export class CanActivateGuard implements CanActivate {
+export class CanActivateGuard implements CanActivate, CanActivateChild {
+
   constructor(
     private routerService: Router,
     private authService: AuthService //servicio q simula el logeo
@@ -19,6 +20,10 @@ export class CanActivateGuard implements CanActivate {
       }
       this.routerService.navigate(['/login']); //sino se redirecciona a la ventana de login
       return false;
+  };
+  //para implementar el guard CanActivateChild solo se implementa la interfaz CanActivateChild y dentro de ella se retorna canActivate
+  canActivateChild(childRoute: ActivatedRouteSnapshot, state: RouterStateSnapshot): boolean | UrlTree | Observable<boolean | UrlTree> | Promise<boolean | UrlTree> {
+    return this.canActivate(childRoute, state);
   }
   
 }
