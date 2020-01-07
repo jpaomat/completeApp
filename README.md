@@ -25,7 +25,13 @@ Run `ng generate component component-name` to generate a new component. You can 
 + En la clase del componente del formulario (**contact.component.ts**) donde se va a usar se implementa la interfaz (**allowDeactivate**) que contiene la funcion (**allowLeaveRoute**) que permite salir de la ruta evaluando  si el formulario esta vacio o fue enviado, sino muestra una  ventana de confirmación
 + En la regla de ruteo del componente se agrega el guard canDeactivate ({path:'contact', component: ContactComponent, canDeactivate:[CanDeactivateGuard]})
 2. **CanActivate**: (ej: verificar si un usuario esta logueado en una app, sino se redirige al componente de login para que pueda loguearse).
-+
++ Inicialmente para simular el back de logueo, se crea un servicio (en la carpeta shared/services/auth.service.ts) donde se manejan las funciones de logueo, deslogueo y verificacion si el usuario esta logueado, (login, logout, isLoggedIn).
++ En el componente donde se usará el guard CanActivate (shared/components/loginComponent), se intectan en la clase el authService y el routerService(Router) y se crea el evento login() donde por medio del servicio auth se incova la funcion login (this.authService.login();), y se captura la url a la que haya intentado entrar para q sea redirigido una vez este logueado.
++ Luego se genera el guard CanActivate **ng g guard guards/can-activate**, dentro del metodo que genera este servicio se ponen las condiciones necesarias para evaluar si el usuario esta logueado, de ser asi se retorna un true el cual permite que el CanActivate deje acceder al usuario y sino se redirecciona al componente login y después en la plantilla del menu (shared/headers/menuComponent) se agrega el boton login y logout y en la clase se agregan el evento logout y se llama al servicio authService
++ Finalmente se agrega el Guard a la reglas de ruteo del componente post que se mostrara solo cuando el usuario este logueado (
+  {path:'posts',component:PostsComponent,canActivate: [CanActivateGuard]},
+  {path:'users/:id/posts',component:PostsComponent, canActivate: [CanActivateGuard]},)
++ Importante tener en cuenta q se debe de agregar la regla de ruteo del componente login (app.routing.module)
 
 ## Build
 
