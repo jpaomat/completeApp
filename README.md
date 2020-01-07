@@ -33,6 +33,21 @@ Run `ng generate component component-name` to generate a new component. You can 
   {path:'users/:id/posts',component:PostsComponent, canActivate: [CanActivateGuard]},)
 + Importante tener en cuenta q se debe de agregar la regla de ruteo del componente login (app.routing.module)
 
+3. **CanActivateChild**: Usualmente se usa la logica del CaActivate para implementar el CanActivateChild, para ello se reutiliza el servicio que se creo del CanActivate (Guards/can-activate.guard.ts):
++ Se implementa la interfaz **CanActivateChild** y la funcion canActivateChild y dentro de ella se retorna la funcion del canActivate (return this.canActivate(childRoute, state);).
++ Se aplica el guard CanActivateClild en la reglas de ruteo de las rutas hijas (en el ejemplo se implemento en EL MODULO DE USERS =>
+const routes: Routes = [
+  {path:'users', component:UsersComponent, canActivateChild:[CanActivateGuard],
+    children:[
+      {path:"", component:UsersListComponent},
+      {path:":id", component:UsersDetailsComponent},
+    ]
+  },
+
+];)
+4. **Resolver**: hasta el momento se ha usado el metodo ngOnInit(){} para cargar la data del componente, pero lo ideal seria que se cargara la data antes de mostrar el componente con el fin de obtener una mejor experiencia de usuario por ejemplo que el usuario no tenga que ver la pantalla en blanco mientras carga la data o si la informacion no existe que el componente si quisera sea mostrado y el usuario sea redirigido a otra ventana, para esto se puede hacer uso del **route guard resolver** que se ejecuta antes de la activacion de la ruta y se encarga de conseguiir la data que se va a mostrar y tambien es util para separar responsabilidades, de esta manera el componente quedaria mas libre al no tener que conseguir la informacion (buenas practicas). Ej: Crear resolver para cargar la data de los posts:
++
+
 ## Build
 
 Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
