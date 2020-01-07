@@ -20,12 +20,16 @@ export class PostsComponent implements OnInit {
     ) { }
   
   ngOnInit() {
-    this.showPosts();
+    //this.showPosts();
+    //para poder usar el guard resolve se usa la ruta activada
+    this.routerActiveService.data.subscribe((data:{posts: Post[]})=>{ // del resolve se recibe un arreglo con la propiedad posts de tipo post[]
+      this.posts=data.posts;
+    })
   };
   goToUsers(){
     this.routerModule.navigate(['/users']);
   };
-  showPosts(){
+  showPosts(){ //esta funcion se reemplaza por el route guard resolve
     //se usa un observable para acceder al id de la ruta
     this.routerActiveService.paramMap.subscribe((parametros)=>{
       if(parametros.has('id')){ //se verfifica si el id esta en la url

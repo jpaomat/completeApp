@@ -18,7 +18,7 @@ export class LoginComponent implements OnInit {
   };
   login(){
     this.authService.login();
-    this.routeRedirect=this.authService.urlUserTryAccess;
+    this.routeRedirect=this.authService.urlUserTryAccess; //captura de la url a la que el usuario intento entrar para redirigirlo 
     //console.log(this.routeRedirect);
     this.authService.urlUserTryAccess='';
     this.routerService.navigate([this.routeRedirect]);
